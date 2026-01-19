@@ -1,6 +1,6 @@
 # PortaOne Puzzle Solver
 
-This repository contains my solution to the PortaOne Become a Developer program test task. The original assignment is in [TASK.md](TASK.md).
+This repository contains my solution to the PortaOne "Become a Developer" program test task. The original assignment is in [TASK.md](TASK.md).
 
 ## Overview
 
