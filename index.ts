@@ -69,10 +69,6 @@ class PuzzleSolver {
             this.dfsLongestPath(v, currentPath);
         }
 
-        if (isLeaf && currentPath.length >= 67) {
-            console.log(`${currentPath.length}-length path found!`);
-        }
-
         if (isLeaf && currentPath.length > this.bestPath.length) {
             this.bestPath = currentPath.slice();
         }
