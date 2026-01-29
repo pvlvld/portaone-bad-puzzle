@@ -26,6 +26,8 @@ class PuzzleSolver {
     private adjList: number[][];
     private visited: BitSet;
     private bestPath: number[];
+    private currentPathArr: number[];
+    private currentPathLen: number;
 
     constructor(input: string[]) {
         this.input = input;
@@ -33,6 +35,8 @@ class PuzzleSolver {
         this.adjList = Array.from({ length: this.n }, () => []);
         this.visited = new BitSet(this.n);
         this.bestPath = [];
+        this.currentPathArr = new Array(this.n);
+        this.currentPathLen = 0;
         this.buildGraph();
     }
 
@@ -56,9 +60,9 @@ class PuzzleSolver {
         }
     }
 
-    private dfsLongestPath(u: number, currentPath: number[]) {
+    private dfsLongestPath(u: number) {
         this.visited.add(u);
-        currentPath.push(u);
+        this.currentPathArr[this.currentPathLen++] = u;
 
         const neighbors = this.adjList[u];
         let isLeaf = true;
@@ -67,19 +71,22 @@ class PuzzleSolver {
             const v = neighbors[i];
             if (this.visited.has(v)) continue;
             isLeaf = false;
-            this.dfsLongestPath(v, currentPath);
+            this.dfsLongestPath(v);
         }
 
-        if (isLeaf && currentPath.length > this.bestPath.length) {
-            this.bestPath = currentPath.slice();
+        if (isLeaf && this.currentPathLen > this.bestPath.length) {
+            this.bestPath = this.currentPathArr.slice(0, this.currentPathLen);
         }
 
-        currentPath.pop();
+        this.currentPathLen--;
         this.visited.delete(u);
     }
 
     solve(): string {
-        for (let i = 0; i < this.n; i++) this.dfsLongestPath(i, []);
+        for (let i = 0; i < this.n; i++) {
+            this.currentPathLen = 0;
+            this.dfsLongestPath(i);
+        }
 
         if (this.bestPath.length === 0) return "";
 
