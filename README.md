@@ -13,7 +13,11 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 1. Ensure Node.js v25+ is available.
 2. Run that piece of greatest software ever written:
     ```sh
-    node index.ts data.txt
+    time node index.ts data.txt
+    ```
+    Multithreaded version:
+    ```sh
+    time node workers.ts data.txt
     ```
 3. The solver prints the concatenated maximum chain and the elapsed time (excluding file read).
 
