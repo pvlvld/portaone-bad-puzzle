@@ -7,7 +7,7 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 - Finds the longest single-line numeric puzzle chain where adjacent fragments match on their first/last two digits.
 - Implements recursive depth-first search (DFS) over a directed adjacency list.
 - Uses a compact `BitSet` to track visited nodes, improving data locality so more fits in CPU cache and cutting runtime from about **9.5s** to **2.5s** on my runs.
-- [Miltithreaded version](workers.ts) using Node Workers.
+- [Multithreaded version](workers.ts) using Node Workers.
 
 ## Running
 
