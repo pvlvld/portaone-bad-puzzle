@@ -32,11 +32,11 @@ class PuzzleSolver {
     constructor(input: string[]) {
         this.input = input;
         this.n = input.length;
-        this.adjList = Array.from({ length: this.n }, () => []);
-        this.visited = new BitSet(this.n);
-        this.bestPath = [];
         this.currentPathArr = new Array(this.n);
+        this.visited = new BitSet(this.n);
+        this.adjList = Array.from({ length: this.n }, () => []);
         this.currentPathLen = 0;
+        this.bestPath = [];
         this.buildGraph();
     }
 
