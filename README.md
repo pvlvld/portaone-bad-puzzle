@@ -7,6 +7,7 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 - Finds the longest single-line numeric puzzle chain where adjacent fragments match on their first/last two digits.
 - Implements recursive depth-first search (DFS) over a directed adjacency list.
 - Uses a compact `BitSet` to track visited nodes, improving data locality so more fits in CPU cache and cutting runtime from about **9.5s** to **2.5s** on my runs.
+- [Miltithreaded version](workers.ts) using Node Workers.
 
 ## Running
 
@@ -26,3 +27,21 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 - Builds a graph where an edge `a -> b` exists when the last two digits of `a` equal the first two digits of `b`.
 - DFS explores all possible paths while the `BitSet` makes visited set go brrr.
 - The best path is turned into the final number by overlapping the shared digits (as per example in the [task](TASK.md)).
+
+## Benchmark
+
+| Solution                                                                  | Runtime    | Language   |
+| ------------------------------------------------------------------------- | ---------- | ---------- |
+| [workers.ts](workers.ts)                                                  | ~600ms     | JavaScript |
+| [index.ts](index.ts)                                                      | ~2200ms    | JavaScript |
+| [@demkom58 solution](https://github.com/demkom58/portaone-test-task/)     | ~5000ms    | Java       |
+| [@bohdanbohiv solution](https://github.com/bohdanbohiv/portaone_bad_2025) | ~1410000ms | Python     |
+
+**Setup:**
+
+- **Kernel:** Linux 6.18.7-2-cachyos
+- **CPU:** Ryzen 5 5600g @ 4.4GHz all cores
+- **RAM:** DDR4 4400MHz
+- **Node:** v25.4.0
+- **Python:** v3.14.2
+- **Java:** openjdk 21.0.10 2026-01-20
