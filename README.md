@@ -30,12 +30,12 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 
 ## Benchmark
 
-| Solution                                                                  | Runtime    | Language   |
-| ------------------------------------------------------------------------- | ---------- | ---------- |
-| [workers.ts](workers.ts)                                                  | ~600ms     | JavaScript |
-| [index.ts](index.ts)                                                      | ~2200ms    | JavaScript |
-| [@demkom58 solution](https://github.com/demkom58/portaone-test-task/)     | ~5000ms    | Java       |
-| [@bohdanbohiv solution](https://github.com/bohdanbohiv/portaone_bad_2025) | ~1410000ms | Python     |
+| Solution                                                                  | Runtime            | Language   |
+| ------------------------------------------------------------------------- | ------------------ | ---------- |
+| [workers.ts](workers.ts)                                                  | ~600ms             | JavaScript |
+| [index.ts](index.ts)                                                      | ~2200ms            | JavaScript |
+| [@demkom58 solution](https://github.com/demkom58/portaone-test-task/)     | ~5000ms            | Java       |
+| [@bohdanbohiv solution](https://github.com/bohdanbohiv/portaone_bad_2025) | ~1410000ms (23.5m) | Python     |
 
 **Setup:**
 
