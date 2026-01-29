@@ -63,7 +63,8 @@ class PuzzleSolver {
         const neighbors = this.adjList[u];
         let isLeaf = true;
 
-        for (const v of neighbors) {
+        for (let i = 0; i < neighbors.length; i++) {
+            const v = neighbors[i];
             if (this.visited.has(v)) continue;
             isLeaf = false;
             this.dfsLongestPath(v, currentPath);
