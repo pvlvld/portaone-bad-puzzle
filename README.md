@@ -34,8 +34,10 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 | ------------------------------------------------------------------------- | ------------------ | ---------- |
 | [My multithreaded](workers.ts)                                            | ~600ms             | JavaScript |
 | [My single threaded](index.ts)                                            | ~2200ms            | JavaScript |
+| [@oddtO solution](https://github.com/oddtO/puzzle-solver)                 | ~4600ms            | JavaScript |
 | [@demkom58 solution](https://github.com/demkom58/portaone-test-task/)     | ~5000ms            | Java       |
 | [@Alina978 solution](https://github.com/Alina9782/Digital-puzzle-solver)  | ~11500ms           | JavaScript |
+| [@Viposha solution](https://github.com/Viposha/puzzle_task)               | ~171000ms          | Python     |
 | [@bohdanbohiv solution](https://github.com/bohdanbohiv/portaone_bad_2025) | ~1410000ms (23.5m) | Python     |
 
 **Setup:**
