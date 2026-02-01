@@ -12,7 +12,7 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 ## Running
 
 1. Ensure Node.js v25+ is available.
-2. Run that piece of greatest software ever written:
+2. Run that piece of the greatest software ever written:
     ```sh
     time node index.ts data.txt
     ```
@@ -32,8 +32,8 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 
 | Solution                                                                  | Runtime            | Language   |
 | ------------------------------------------------------------------------- | ------------------ | ---------- |
-| [My multithreaded](workers.ts)                                            | ~600ms             | JavaScript |
-| [My single threaded](index.ts)                                            | ~2200ms            | JavaScript |
+| [My multithreaded](workers.ts)                                            | ~500ms             | JavaScript |
+| [My single threaded](index.ts)                                            | ~2100ms            | JavaScript |
 | [@oddtO solution](https://github.com/oddtO/puzzle-solver)                 | ~4600ms            | JavaScript |
 | [@demkom58 solution](https://github.com/demkom58/portaone-test-task/)     | ~5000ms            | Java       |
 | [@Alina978 solution](https://github.com/Alina9782/Digital-puzzle-solver)  | ~11500ms           | JavaScript |
@@ -42,9 +42,9 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 
 **Setup:**
 
-- **Kernel:** Linux 6.18.7-2-cachyos
+- **Kernel:** Linux 6.18.8-3-cachyos
 - **CPU:** Ryzen 5 5600g @ 4.4GHz all cores
 - **RAM:** DDR4 4400MHz
-- **Node:** v25.4.0
+- **Node:** v25.5.0
 - **Python:** v3.14.2
 - **Java:** openjdk 21.0.10 2026-01-20
