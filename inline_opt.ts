@@ -7,27 +7,25 @@ const __filename = fileURLToPath(import.meta.url);
 if (!isMainThread) {
     parentPort!.on("message", ({ input, adjEdges, adjOffsets, startNodes }) => {
         const n = input.length;
-        // u8 limits us to 256 nodes
         const visited = new Uint8Array(n);
         let currentPathLen = 0;
+        const currentPathArr = new Uint8Array(n);
         let bestPathLen = 0;
-        const currentPathArr: number[] = [];
-        const bestPathArr: number[] = [];
+        const bestPathArr = new Uint8Array(n);
         const dfs = (u: number) => {
             visited[u] = 1;
             currentPathArr[currentPathLen++] = u;
-            const start = adjOffsets[u];
-            const end = adjOffsets[u + 1];
             let isLeaf = true;
-            let i = 0;
+            let start = adjOffsets[u];
+            const end = adjOffsets[u + 1];
 
-            while (start + i < end) {
-                const v = adjEdges[start + i];
+            while (start < end) {
+                const v = adjEdges[start];
                 if (!visited[v]) {
                     isLeaf = false;
                     dfs(v);
                 }
-                i++;
+                start++;
             }
 
             if (isLeaf && currentPathLen > bestPathLen) {
@@ -43,11 +41,7 @@ if (!isMainThread) {
             visited[u] = 0;
         };
 
-        let s = 0;
-        while (s < startNodes.length) {
-            dfs(startNodes[s]);
-            s++;
-        }
+        while (startNodes.length) dfs(startNodes.pop());
 
         parentPort!.postMessage(bestPathArr.slice(0, bestPathLen));
     });

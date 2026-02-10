@@ -32,7 +32,7 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 
 | Solution                                                                   | Runtime            | Language         |
 | -------------------------------------------------------------------------- | ------------------ | ---------------- |
-| [My ugly (inlined) multithreaded](inline_opt.ts)                           | ~260ms             | JavaScript (Bun) |
+| [My ugly (inlined) multithreaded](inline_opt.ts)                           | ~240ms             | JavaScript (Bun) |
 | [My multithreaded](workers.ts)                                             | ~425ms             | JavaScript       |
 | [@yaroslavpapka solution](https://github.com/yaroslavpapka/fragment_chain) | ~1000ms            | C++              |
 | [My single threaded](index.ts)                                             | ~2000ms            | JavaScript       |
