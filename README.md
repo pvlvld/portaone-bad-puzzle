@@ -32,9 +32,9 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 
 | Solution                                                                   | Runtime            | Language   |
 | -------------------------------------------------------------------------- | ------------------ | ---------- |
-| [My multithreaded](workers.ts)                                             | ~500ms             | JavaScript |
+| [My multithreaded](workers.ts)                                             | ~425ms             | JavaScript |
 | [@yaroslavpapka solution](https://github.com/yaroslavpapka/fragment_chain) | ~1000ms            | C++        |
-| [My single threaded](index.ts)                                             | ~2100ms            | JavaScript |
+| [My single threaded](index.ts)                                             | ~2000ms            | JavaScript |
 | [@oddtO solution](https://github.com/oddtO/puzzle-solver)                  | ~4600ms            | JavaScript |
 | [@demkom58 solution](https://github.com/demkom58/portaone-test-task/)      | ~5000ms            | Java       |
 | [@Alina978 solution](https://github.com/Alina9782/Digital-puzzle-solver)   | ~11500ms           | JavaScript |
