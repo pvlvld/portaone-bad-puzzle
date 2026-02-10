@@ -30,16 +30,17 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 
 ## Benchmark
 
-| Solution                                                                   | Runtime            | Language   |
-| -------------------------------------------------------------------------- | ------------------ | ---------- |
-| [My multithreaded](workers.ts)                                             | ~425ms             | JavaScript |
-| [@yaroslavpapka solution](https://github.com/yaroslavpapka/fragment_chain) | ~1000ms            | C++        |
-| [My single threaded](index.ts)                                             | ~2000ms            | JavaScript |
-| [@oddtO solution](https://github.com/oddtO/puzzle-solver)                  | ~4600ms            | JavaScript |
-| [@demkom58 solution](https://github.com/demkom58/portaone-test-task/)      | ~5000ms            | Java       |
-| [@Alina978 solution](https://github.com/Alina9782/Digital-puzzle-solver)   | ~11500ms           | JavaScript |
-| [@Viposha solution](https://github.com/Viposha/puzzle_task)                | ~171000ms          | Python     |
-| [@bohdanbohiv solution](https://github.com/bohdanbohiv/portaone_bad_2025)  | ~1410000ms (23.5m) | Python     |
+| Solution                                                                   | Runtime            | Language         |
+| -------------------------------------------------------------------------- | ------------------ | ---------------- |
+| [My ugly (inlined) multithreaded](inline_opt.ts)                           | ~260ms             | JavaScript (Bun) |
+| [My multithreaded](workers.ts)                                             | ~425ms             | JavaScript       |
+| [@yaroslavpapka solution](https://github.com/yaroslavpapka/fragment_chain) | ~1000ms            | C++              |
+| [My single threaded](index.ts)                                             | ~2000ms            | JavaScript       |
+| [@oddtO solution](https://github.com/oddtO/puzzle-solver)                  | ~4600ms            | JavaScript       |
+| [@demkom58 solution](https://github.com/demkom58/portaone-test-task/)      | ~5000ms            | Java             |
+| [@Alina978 solution](https://github.com/Alina9782/Digital-puzzle-solver)   | ~11500ms           | JavaScript       |
+| [@Viposha solution](https://github.com/Viposha/puzzle_task)                | ~171000ms          | Python           |
+| [@bohdanbohiv solution](https://github.com/bohdanbohiv/portaone_bad_2025)  | ~1410000ms (23.5m) | Python           |
 
 **Setup:**
 
@@ -47,6 +48,7 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 - **CPU:** Ryzen 5 5600g @ 4.4GHz all cores
 - **RAM:** DDR4 4400MHz
 - **Node:** v25.5.0
+- **Bun:** v1.3
 - **Python:** v3.14.2
 - **Java:** openjdk 21.0.10 2026-01-20
 - **C++:** clang version 21.1.6 | `-O3 -march=native`
