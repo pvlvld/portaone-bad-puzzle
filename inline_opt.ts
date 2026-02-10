@@ -20,21 +20,19 @@ if (!isMainThread) {
             const end = adjOffsets[u + 1];
 
             while (start < end) {
-                const v = adjEdges[start];
-                if (!visited[v]) {
+                if (!visited[adjEdges[start]]) {
+                    dfs(adjEdges[start]);
                     isLeaf = false;
-                    dfs(v);
                 }
                 start++;
             }
 
             if (isLeaf && currentPathLen > bestPathLen) {
                 bestPathLen = currentPathLen;
-                let j = 0;
-                while (j < bestPathLen) {
-                    bestPathArr[j] = currentPathArr[j];
-                    j++;
+                while (currentPathLen) {
+                    bestPathArr[--currentPathLen] = currentPathArr[currentPathLen];
                 }
+                currentPathLen = bestPathLen;
             }
 
             currentPathLen--;
@@ -125,12 +123,9 @@ if (!isMainThread) {
             const endIdx = Math.min(startIdx + chunkSize, n);
             if (startIdx >= n) break;
 
-            const startNodes = new Array(endIdx - startIdx);
+            const startNodes: number[] = [];
             let j = 0;
-            while (j < startNodes.length) {
-                startNodes[j] = startIdx + j;
-                j++;
-            }
+            while (j < endIdx - startIdx) startNodes.push(startIdx + j++);
 
             promises.push(
                 new Promise((resolve) => {
