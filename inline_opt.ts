@@ -76,7 +76,7 @@ if (!isMainThread) {
             i++;
         }
 
-        const counts = new Int32Array(n);
+        const counts = new Uint8Array(n);
         let totalEdges = 0;
         i = 0;
         while (i < n) {
@@ -92,15 +92,15 @@ if (!isMainThread) {
             i++;
         }
 
-        const adjOffsets = new Int32Array(n + 1);
+        const adjOffsets = new Uint8Array(n + 1);
         i = 0;
         while (i < n) {
             adjOffsets[i + 1] = adjOffsets[i] + counts[i];
             i++;
         }
 
-        const adjEdges = new Int32Array(totalEdges);
-        const cursor = new Int32Array(adjOffsets);
+        const adjEdges = new Uint8Array(totalEdges);
+        const cursor = new Uint8Array(adjOffsets);
 
         i = 0;
         while (i < n) {
@@ -165,11 +165,8 @@ if (!isMainThread) {
         console.log(`Result: ${result}`);
         console.log(`Time: ${(end - start).toFixed(2)} ms`);
 
-        i = 0;
-        while (i < workerPool.length) {
-            await workerPool[i].terminate();
-            i++;
-        }
+        while (workerPool.length) await workerPool.pop()!.terminate();
+
         process.exit(0);
     })();
 }
