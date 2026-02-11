@@ -46,7 +46,7 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 
 - **Kernel:** Linux 6.18.8-3-cachyos
 - **CPU:** Ryzen 5 5600g @ 4.4GHz all cores
-- **RAM:** DDR4 4400MHz
+- **RAM:** DDR4 4133MHz CL18
 - **Node:** v25.5.0
 - **Bun:** v1.3
 - **Python:** v3.14.2
