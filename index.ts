@@ -43,11 +43,8 @@ class PuzzleSolver {
     private buildGraph() {
         const prefixes = new Map<string, number[]>();
 
-        let pref = "";
         for (let i = 0; i < this.n; i++) {
-            pref = this.input[i].slice(0, 2);
-            if (!prefixes.has(pref)) prefixes.set(pref, []);
-            prefixes.get(pref)!.push(i);
+            prefixes.getOrInsert(this.input[i].slice(0, 2), []).push(i);
         }
 
         let suffix = "";

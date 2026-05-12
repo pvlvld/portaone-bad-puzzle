@@ -77,9 +77,7 @@ function buildGraph(input: string[]): number[][] {
     const prefixes = new Map<string, number[]>();
 
     for (let i = 0; i < n; i++) {
-        const pref = input[i].slice(0, 2);
-        if (!prefixes.has(pref)) prefixes.set(pref, []);
-        prefixes.get(pref)!.push(i);
+        prefixes.getOrInsert(input[i].slice(0, 2), []).push(i);
     }
 
     for (let i = 0; i < n; i++) {

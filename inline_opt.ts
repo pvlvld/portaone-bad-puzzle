@@ -68,10 +68,7 @@ if (!isMainThread) {
         const prefixes = new Map<string, number[]>();
         let i = 0;
         while (i < n) {
-            const pref = data[i].slice(0, 2);
-            if (!prefixes.has(pref)) prefixes.set(pref, []);
-            prefixes.get(pref)!.push(i);
-            i++;
+            prefixes.getOrInsert(data[i].slice(0, 2), []).push(i++);
         }
 
         const counts = new Uint8Array(n);
