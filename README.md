@@ -11,7 +11,7 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 
 ## Running
 
-1. Ensure Node.js v25+ is available.
+1. Ensure Node.js v26+ is available.
 2. Run that piece of the greatest software ever written:
     ```sh
     time node index.ts data.txt
@@ -32,8 +32,8 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 
 | Solution                                                                   | Runtime            | Language         |
 | -------------------------------------------------------------------------- | ------------------ | ---------------- |
-| [My ugly (inlined) multithreaded](inline_opt.ts)                           | ~240ms             | JavaScript (Bun) |
-| [My multithreaded](workers.ts)                                             | ~425ms             | JavaScript       |
+| [My ugly (inlined) multithreaded](inline_opt.ts)                           | ~210ms             | JavaScript (Bun) |
+| [My multithreaded](workers.ts)                                             | ~400ms             | JavaScript       |
 | [@yaroslavpapka solution](https://github.com/yaroslavpapka/fragment_chain) | ~1000ms            | C++              |
 | [My single threaded](index.ts)                                             | ~2000ms            | JavaScript       |
 | [@oddtO solution](https://github.com/oddtO/puzzle-solver)                  | ~4600ms            | JavaScript       |
@@ -44,11 +44,11 @@ This repository contains my solution to the PortaOne "Become a Developer" progra
 
 **Setup:**
 
-- **Kernel:** Linux 6.18.8-3-cachyos
+- **Kernel:** Linux 7.0.5-2-cachyos
 - **CPU:** Ryzen 5 5600g @ 4.4GHz all cores
 - **RAM:** DDR4 4133MHz CL18
-- **Node:** v25.5.0
-- **Bun:** v1.3
+- **Node:** v26.1.0
+- **Bun:** v1.3.14
 - **Python:** v3.14.2
 - **Java:** openjdk 21.0.10 2026-01-20
 - **C++:** clang version 21.1.6 | `-O3 -march=native`
